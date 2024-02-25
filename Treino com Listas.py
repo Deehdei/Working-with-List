@@ -12,8 +12,12 @@ while True:
         try:
             indice = int(indice_str)
             del lista_compras[indice]
-        except:
-            print('Não foi possível apagar este indice')
+        except ValueError:
+            print('Por favor digite um número inteiro.')
+        except IndexError:
+            print('Indice não existe na lista.')
+        except Exception:
+            print('Erro desconhecido.')
     
     elif opcoes == 'l':
         if len(lista_compras) == 0:
